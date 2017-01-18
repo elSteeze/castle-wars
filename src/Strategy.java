@@ -1,9 +1,10 @@
 
 public class Strategy {
-	String behavior;
+	String strategy;
 	
-	public Strategy(String behavior){
-		this.behavior = behavior;
+	public Strategy(String strat){
+		this.strategy = strat;
+		
 	}
 	
 }

@@ -4,7 +4,7 @@ public class Player {
 		castle, fence;
 	Strategy strategy;
 
-	public Player(Strategy strategy){
+	public Player(String strategy){
 		this.builders = 2;
 		this.bricks = 5;
 		this.soldiers = 2;
@@ -13,10 +13,11 @@ public class Player {
 		this.crystals = 5;
 		this.castle = 30;
 		this.fence = 10;
-		this.strategy = strategy;
+		setStrategy(strategy);
 		getDeck();
 		setHand();
 	}
+
 
 	public int getBuilders() {
 		return builders;
@@ -88,6 +89,11 @@ public class Player {
 	
 	public void setHand(){
 		// randomly pulls 8 cards from the deck
+	}
+	
+	public void setStrategy(String strategy){
+		Strategy strat = new Strategy(strategy);
+		this.strategy = strat;
 	}
 
 	@Override
