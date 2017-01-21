@@ -140,7 +140,6 @@ public class Driver {
 	 */
 	public static void startGame(Player dumby, Player defensive){
 		
-<<<<<<< HEAD
 		Move move = new Move();
 		
 		
@@ -156,15 +155,8 @@ public class Driver {
 			System.out.println("Defensive Strategy chooses: " + move.getMove().toString() + "\n\n------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------\n");
 		}else{
 			System.out.println("Defensive Strategy chooses to discard.\n\n------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------\n");
-=======
-		while(!winCondition(user, computer)){
-			// test commit
->>>>>>> 3ba02517f11c7a38f8aef5c5c7dacd179bba2439
 		}
-		
-		
 	}
-	
 	/**
 	 * not used, put in place for future implementation
 	 * @param user
