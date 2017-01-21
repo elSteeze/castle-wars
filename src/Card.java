@@ -1,23 +1,37 @@
-
+/**
+ * The Card class that defines the attributes of a card with appropriate methods to access card
+ * @author cbentson
+ *
+ */
 public class Card {
-	Resource requiredResourceType;
+	String requiredResourceType;
 	int requiredResourceValue;
-	String cardName;
-	Action action;
+	String cardName, type;
 	
-	public Card(Resource requiredResourceType, int requiredResourceValue, 
-			String cardName, Action action){
-		this.action = action;
+//	Action action;
+	
+	public Card(String requiredResourceType, int requiredResourceValue, 
+			String cardName, String type){
+//		this.action = null;
 		this.cardName = cardName;
 		this.requiredResourceType = requiredResourceType;
 		this.requiredResourceValue = requiredResourceValue;
+		this.type = type;
 	}
 
-	public Resource getRequiredResourceType() {
+	public String getType(){
+		return type;
+	}
+	
+	public void setType(String type){
+		this.type = type;
+	}
+	
+	public String getRequiredResourceType() {
 		return requiredResourceType;
 	}
 
-	public void setRequiredResourceType(Resource requiredResourceType) {
+	public void setRequiredResourceType(String requiredResourceType) {
 		this.requiredResourceType = requiredResourceType;
 	}
 
@@ -37,18 +51,18 @@ public class Card {
 		this.cardName = cardName;
 	}
 
-	public Action getAction() {
-		return action;
-	}
+//	public Action getAction() {
+//		return action;
+//	}
 
-	public void setAction(Action action) {
-		this.action = action;
-	}
+//	public void setAction(Action action) {
+//		this.action = action;
+//	}
 
 	@Override
 	public String toString() {
 		return "Card [requiredResourceType=" + requiredResourceType + ", requiredResourceValue=" + requiredResourceValue
-				+ ", cardName=" + cardName + ", action=" + action + "]";
+				+ ", cardName=" + cardName + "]";
 	}
 	
 	

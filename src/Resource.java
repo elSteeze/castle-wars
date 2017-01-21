@@ -1,4 +1,8 @@
-
+/**
+ * in place for future implementation
+ * @author cbentson
+ *
+ */
 public class Resource {
 	String resource;
 	

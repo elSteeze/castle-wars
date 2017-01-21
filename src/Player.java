@@ -1,24 +1,46 @@
-
+/**
+ * Player class taht definse the attributes of a player with accesible methods
+ * @author cbentson
+ *
+ */
 public class Player {
 	int builders, bricks, soldiers, weapons, magic, crystals,
 		castle, fence;
-	Strategy strategy;
+	//Deck deck;
+	Card [] hand;
 
-	public Player(String strategy){
-		this.builders = 2;
-		this.bricks = 5;
-		this.soldiers = 2;
-		this.weapons = 5;
-		this.magic = 2;
-		this.crystals = 5;
+	public Player(Card [] hand){
+		this.builders = 10;
+		this.bricks = 10;
+		this.soldiers = 10;
+		this.weapons = 10;
+		this.magic = 10;
+		this.crystals = 10;
 		this.castle = 30;
 		this.fence = 10;
-		setStrategy(strategy);
-		getDeck();
-		setHand();
+//		this.deck = getDeck();
+//		try {
+//			this.hand = setHand(deck);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		this.hand = hand;
 	}
 
 
+	public int hasThisResource(String resource){
+		switch(resource){
+		case "builders": return this.getBuilders();
+		case "bricks": return this.getBricks();
+		case "soldiers": return this.getSoldiers();
+		case "swords": return this.getWeapons();
+		case "magic": return this.getMagic();
+		case "crystals": return this.getCrystals();
+		default: return -1;
+		}
+	}
+	
 	public int getBuilders() {
 		return builders;
 	}
@@ -83,18 +105,18 @@ public class Player {
 		this.fence = fence;
 	}
 	
-	public void getDeck(){
-		// pulls from the players pre-defined card deck
+	public Deck getDeck(){
+		Deck deck = new Deck();
+		deck.createDeck();
+		return deck;
 	}
 	
-	public void setHand(){
-		// randomly pulls 8 cards from the deck
+	public Card [] getHand(){
+		return this.hand;
+		
 	}
+
 	
-	public void setStrategy(String strategy){
-		Strategy strat = new Strategy(strategy);
-		this.strategy = strat;
-	}
 
 	@Override
 	public String toString() {
